@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Localoye</title>
+
+<meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0,maximum-scale=1.0, user-scalable=no;" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+
+<link href="js/jquery.mobile-1.4.3.min.css" rel="stylesheet" type="type/css" />
+<script src="js/jquery.mobile-1.4.3.min.js" type="text/javascript"></script>
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript" charset="utf-8" src="phonegap-1.2.0.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="js/cities.js"></script>
+
+<script type="text/javascript">
+
+var array = new Array();
+var tarlat = 0;
+var tarlon = 0;
+var low = null;
+var vectordislow;
+var ret;
+var array = new Array();
+
+function getLocation() {
+            var locOptions = {
+            timeout : 30000,
+            enableHighAccuracy : true
+            };
+
+            navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationError,locOptions);
+
+            function onGeolocationSuccess(loc) 
+            {
+                    getcoods(loc);                                            
+                    getcity();
+                    getsuggestions();
+			          
+              }
+              function onGeolocationError(e) {
+                  alert("Geolocation error: #" + e.code + "\n" +
+                  e.message);
+        }
+}
+
+
+</script>
+
+</head>
+<body>            
+            <div id = "lat"></div>
+            <div id = "lon"></div>
+            <div id = "city"></div>
+            
+     		<button onclick="getLocation()">Get Location</button>
+      		      		
+	      	 <div class="ui-widget">
+		         <label for="automplete-1">Autocomplete </label>
+		         <input id="automplete-1">
+    	     </div>
+      		
+         	<div id="form1"></div>
+
+  
+</body>
+</html>
