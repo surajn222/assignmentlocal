@@ -9,3 +9,8 @@ var cities = { "cities": [
                         
                         ]
                  };
+
+                 
+var Mumbai = new Array();
+
+Mumbai = ["Bandra","Khar"];

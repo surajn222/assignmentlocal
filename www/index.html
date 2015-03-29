@@ -18,13 +18,9 @@
 
 <script type="text/javascript">
 
-var array = new Array();
-var tarlat = 0;
-var tarlon = 0;
 var low = null;
 var vectordislow;
-var ret;
-var array = new Array();
+var returned;
 
 function getLocation() {
             var locOptions = {
@@ -36,11 +32,9 @@ function getLocation() {
 
             function onGeolocationSuccess(loc) 
             {
-                    getcoods(loc);                                            
-                    getcity();
-                    getsuggestions();
-			          
-              }
+              getsuggestions(loc);
+			 }
+			 
               function onGeolocationError(e) {
                   alert("Geolocation error: #" + e.code + "\n" +
                   e.message);
